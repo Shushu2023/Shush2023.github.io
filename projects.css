@@ -1,148 +1,41 @@
-/*
- * Globals
- */
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
+.content{
+ display:grid;/*create a grid layout*/
+ grid-template-columns: repeat(3,1fr); /*create 3 columns each with 1 fractional unit*/
+ grid-template-rows:repeat(1,150px) ; /*create 1 rows each 150 px wide*/ 
+ gap: 5 px; /*create 5 px spacing*/
 }
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
-
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  /*background-color: #333;*/
-  background-color: white;
+div{
+     /*background-color: cadetblue;*/
+     padding: 30px; /*create spacing between the numbers*/
+     text-align: center;/*center the text*/
+ }
+ /*div:nth-of-type(odd){
+     background-color: burlywood;/*change the color of odd numbered divs*/
+ /*}*/
+ .one{
+     grid-column: 1 /2 ;/*specify class one  the colomn start at line 1  ends at column line 3*/
+     
+ }
+ .two{
+     grid-column: 2 /3;  /*specify the class two starts at colulmn line 3 and ends at colomn line 7*/
+ }
+ .three{
+     grid-column: 3/4;   /*class three div goes from column line 1 to column line 4 */
+    /* grid-row: 2 / 4;  /*the row starts at row line 2 and ends at row line 4*/
+ }
+ /*.container-fluid{
+    background-color: orange;
+ }*/
+/*mobile view*/ 
+ @media only screen and(max-width:550px){
+    .content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:  1fr 1fr 1fr 1fr;
+        grid-template-areas: "one"
+                             "two"
+                             "three";
+ }
  
-}
-
-body {
-  display: -ms-flexbox;
-  display: flex;
-  /*color: #fff;*/
-  color: black;
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-  /*
-      ----------------------------------
-              UPDATE IMAGE BELOW
-      ----------------------------------
-  */
-
- 
-  background: url('00.jpg') no-repeat center center fixed;  
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-
-}
-
-.cover-container {
-  max-width: 42em;
-}
-
-
-/*
- * Header
- */
-.masthead {
-  margin-bottom: 2rem;
-}
-
-.masthead-brand {
-  margin-bottom: 0;
-}
-
-.nav-masthead .nav-link {
-  padding: .25rem 0;
-  font-weight: 700;
-  color: rgba(255, 255, 255, .5);
-  background-color: transparent;
-  border-bottom: .25rem solid transparent;
-}
-
-.nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
-}
-
-.nav-masthead .active {
- /* color: #fff;*/
- color: orange;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 48em) {
-  .masthead-brand {
-    float: left;
-  }
-  .nav-masthead {
-    float: right;
-  }
-}
-
-
-/*
- * Cover
- */
-.cover {
-  padding: 0 1.5rem;
-}
-.cover .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: 700;
-}
-
-
-/*
- * Footer
- */
-.mastfoot {
-  /*color: rgba(255, 255, 255, .5);*/
-  color:orange;
-  
-}
-
-.circular_image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-/*make iframe responsive*/
-.wrapper{
-  position:relative;
-  overflow: hidden;
-  padding-top: 56.25%;
-  
-
-}
-.wrapper iframe{
-  position: absolute;
-  top:0; /*center the iframe in the container*/
-  left: 0;
-  width: 100%;
-  height: 100%; /*set the height of  container of the iframe*/
- 
-}
+ }
